@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebApiDemo;
 using WebApiDemo.Controllers;
 
 namespace WebApiDemo.Tests.Controllers
