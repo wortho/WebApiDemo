@@ -1,47 +1,45 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
 using WebApiDemo.Controllers;
+using Xunit;
 
 namespace WebApiDemo.Tests.Controllers
 {
-    [TestClass]
     public class ValuesControllerTest
     {
-        [TestMethod]
+        [Fact]
         public void Get()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller = new ValuesController();
 
             // Act
-            IEnumerable<string> result = controller.Get();
+            var result = controller.Get();
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(2, result.Count());
-            Assert.AreEqual("value1", result.ElementAt(0));
-            Assert.AreEqual("value2", result.ElementAt(1));
+            Assert.NotNull(result);
+            Assert.Equal(2, result.Count());
+            Assert.Equal("value1", result.ElementAt(0));
+            Assert.Equal("value2", result.ElementAt(1));
         }
 
-        [TestMethod]
+        [Fact]
         public void GetById()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller = new ValuesController();
 
             // Act
-            string result = controller.Get(5);
+            var result = controller.Get(5);
 
             // Assert
-            Assert.AreEqual("value", result);
+            Assert.Equal("value", result);
         }
 
-        [TestMethod]
+        [Fact]
         public void Post()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller = new ValuesController();
 
             // Act
             controller.Post("value");
@@ -49,11 +47,11 @@ namespace WebApiDemo.Tests.Controllers
             // Assert
         }
 
-        [TestMethod]
+        [Fact]
         public void Put()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller = new ValuesController();
 
             // Act
             controller.Put(5, "value");
@@ -61,11 +59,11 @@ namespace WebApiDemo.Tests.Controllers
             // Assert
         }
 
-        [TestMethod]
+        [Fact]
         public void Delete()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            var controller = new ValuesController();
 
             // Act
             controller.Delete(5);
